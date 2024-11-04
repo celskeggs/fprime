@@ -9,7 +9,7 @@ This section of the documentation captures how-to guides for various F´ develop
 
     ---
 
-    Tutorials walk through the essentials of F Prime development, from the canonical HelloWorld example and progressing to cross-compiling and deploying on hardware.
+    Tutorials walk through the essentials of F Prime development, starting with the canonical HelloWorld example and progressing to cross-compiling and deploying on hardware.
 
     [Visit Tutorials](tutorials/index.md){ .md-button .md-button--primary }
 
@@ -17,7 +17,7 @@ This section of the documentation captures how-to guides for various F´ develop
 
     ---
 
-    The User Manual dives into F Prime design philosophy and architectural principles, providing deep understanding of how the framework operates.
+    The User Manual dives into F Prime design philosophy and architectural principles, providing a deep understanding of how the framework operates.
 
     [Visit User Manual](user-manual/index.md){ .md-button .md-button--primary }
 

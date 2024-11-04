@@ -5,7 +5,7 @@ hide:
 
 # Tutorials
 
-Tutorials walk through the essentials of F Prime development, from the canonical HelloWorld example and progressing to cross-compiling and deploying on hardware.
+Tutorials walk through the essentials of F Prime development, starting with the canonical HelloWorld example and progressing to cross-compiling and deploying on hardware.
 
 <div class="grid cards" markdown>
 

@@ -14,7 +14,7 @@ How-To guides offer step-by-step instructions for specific development tasks in 
 
     ---
 
-    This how to will walk through the process of developing GDS plugins. 
+    This guide will walk you through the process of developing GDS plugins.
 
     [View Develop F´ GDS Plugins](develop-gds-plugins.md){ .md-button .md-button--primary }
 

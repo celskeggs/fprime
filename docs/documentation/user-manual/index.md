@@ -5,7 +5,7 @@ hide:
 
 # User Manual
 
-The User Manual dives into F Prime design philosophy and architectural principles, providing deep understanding of how the framework operates. Below are the different topics you can find under the User Manual. 
+The User Manual dives into F Prime design philosophy and architectural principles, providing a deep understanding of how the framework operates. Below are the different topics you can find under the User Manual. 
 
 ## __F´ Overview__
 Technical overview of F Prime

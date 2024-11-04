@@ -11,7 +11,7 @@ F´ has the following features:
 - A standard library of flight-worthy components
 - Testing tools for unit and system-level testing
 
-## Table of Contents
+## Get Started with F Prime
 - [Installing F´](installing-fprime.md)
 - [Installing F´ Autocomplete](installing-autocomplete.md)
 - [F´Features](features.md)
