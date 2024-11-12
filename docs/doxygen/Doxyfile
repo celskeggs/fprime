@@ -59,7 +59,7 @@ PROJECT_LOGO           = ./docs/doxygen/logo.png
 # entered, it will be relative to the location where doxygen was started. If
 # left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = ./docs/UsersGuide/api/c++
+OUTPUT_DIRECTORY       = ./docs/documentation/reference/api/c++
 
 # If the CREATE_SUBDIRS tag is set to YES then doxygen will create 4096 sub-
 # directories (in 2 levels) under the output directory of each output format and
@@ -897,9 +897,9 @@ RECURSIVE              = YES
 # Note that relative paths are relative to the directory from which doxygen is
 # run.
 
-EXCLUDE                = ./docs/Architecture/ ./docs/UsersGuide/ ./docs/Tutorials/ \
-                         ./docs/INSTALL.md ./docs/projects.md ./docs/index.md ./docs/_config.yml \
-                         ./docs/upcoming.md ./docs/latest.md ./docs/documentation.md ./docs/features.md \
+# ./docs need to be excluded individually because ./docs/doxygen/mainpage.md needs to be included
+EXCLUDE                = ./docs/documentation ./docs/events ./docs/getting-started \
+                         ./docs/overview ./docs/support \
                          *CMakeFiles/* ./Autocoders ./cmake ./gtest ./Ref ./RPI ./FppTest \
                          STest ./mk ./README.md ./CONTRIBUTORS.md ./CONTRIBUTING.md ./SECURITY.md \
                          ./googletest/
@@ -1011,7 +1011,7 @@ FILTER_SOURCE_PATTERNS =
 # (index.html). This can be useful if you have a project on for instance GitHub
 # and want to reuse the introduction page also for the doxygen output.
 
-USE_MDFILE_AS_MAINPAGE = ./docs/doxygen/mainpage.md
+USE_MDFILE_AS_MAINPAGE = ./mainpage.md
 
 #---------------------------------------------------------------------------
 # Configuration options related to source browsing

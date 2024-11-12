@@ -34,8 +34,8 @@ my-library/
 └── library.cmake
 ```
 
-!!! note
-    Module directories shall be namespaced (i.e. `MyLibrary` above) to ensure that modules do not collide with F´ and other libraries. Placing container directories (e.g. `Components`, `Svc`, `Drv`, etc.) directly at the root of the repository is *strongly* forbidden.
+> [!NOTE]
+> Module directories shall be namespaced (i.e. `MyLibrary` above) to ensure that modules do not collide with F´ and other libraries. Placing container directories (e.g. `Components`, `Svc`, `Drv`, etc.) directly at the root of the repository is *strongly* forbidden.
 
 You will see how to develop each of these parts of the library in the following sections.
 
