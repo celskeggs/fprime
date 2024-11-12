@@ -10,7 +10,7 @@ Technical reference for the F Prime C++ API, CMake API, FPP language specificati
 
 <div class="grid cards" markdown>
 
--   <span class="card-title">__C++ Documentaton__</span>
+-   <span class="card-title">__C++ Documentation__</span>
 
     ---
 
@@ -32,7 +32,7 @@ Technical reference for the F Prime C++ API, CMake API, FPP language specificati
 
     This section of the documentation captures step by step how tos for various F´ development tasks.
 
-    [View CMAke User API Docuemtnation](cmake-api.md){ .md-button .md-button--primary }
+    [View CMake User API Documentation](cmake-api.md){ .md-button .md-button--primary }
 
 -   <span class="card-title">__GDS CLI Design__</span>
 

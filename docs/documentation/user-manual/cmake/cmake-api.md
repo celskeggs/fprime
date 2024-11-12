@@ -5,10 +5,10 @@ describes the module-level API for working with CMake. This is where users shoul
 descriptions of module-level functions. Options describe the runtime options that the CMake system
 takes. Users wanting to alter the build should look here.
 
-- [API](../api/cmake/API.md): Module API function documentation
-- [Options](../api/cmake/options.md): Runtime build options
+- [API](../../reference/api/cmake/API.md): Module API function documentation
+- [Options](../../reference/api//cmake/options.md): Runtime build options
 
-An index of all available documentation is available at [CMake API Index](../api/cmake/index.md). This documentation is generated from the source code available [here](https://github.com/nasa/fprime/tree/devel/cmake). Below is a description of some of the main API functionalities.
+An index of all available documentation is available at [CMake API Index](../../reference/api//cmake/index.md). This documentation is generated from the source code available [here](https://github.com/nasa/fprime/tree/devel/cmake). Below is a description of some of the main API functionalities.
 
 ## Toolchain and Platform Documentation
 
@@ -17,16 +17,16 @@ to cross-compile, however; F´ includes several built-in toolchains and a templa
 own toolchains for F´.
 
 [CMake Toolchain Documentation](https://cmake.org/cmake/help/latest/manual/cmake-toolchains.7.html): CMake's toolchain documentation  
-[Toolchain Template](../api/cmake/toolchain/toolchain-template.md): Toolchain file template documentation  
-[raspberrypi](../api/cmake/toolchain/raspberrypi.md): Raspberry PI cross-compile toolchain file
+[Toolchain Template](../../reference/api//cmake/toolchain/toolchain-template.md): Toolchain file template documentation  
+[raspberrypi](../../reference/api//cmake/toolchain/raspberrypi.md): Raspberry PI cross-compile toolchain file
 
 Platform files are used to set up F´ for use on specific hardware platforms. This allows users to
 define types and headers needed for F´ for any embedded system they desire.
 
-[Platform Template](../api/cmake/platform/platform-template.md): Platform file template documentation  
-[Linux](../api/cmake/platform/Linux.md): Linux platform support  
-[Darwin](../api/cmake/platform/Darwin.md): Darwin (macOS) platform support  
-[rtems5](../api/cmake/platform/rtems5.md): RTEMS 5 initial support  
+[Platform Template](../../reference/api//cmake/platform/platform-template.md): Platform file template documentation  
+[Linux](../../reference/api//cmake/platform/Linux.md): Linux platform support  
+[Darwin](../../reference/api//cmake/platform/Darwin.md): Darwin (macOS) platform support  
+[rtems5](../../reference/api//cmake/platform/rtems5.md): RTEMS 5 initial support  
 
 ## Target Documentation
 
@@ -37,7 +37,7 @@ them into a global dictionary.
 
 [Target](./Targets.md): target subsystem documentation
 
-All available targets are listed and described in the [CMake API Index](../api/cmake/index.md)
+All available targets are listed and described in the [CMake API Index](../../reference/api//cmake/index.md)
 
 
 ## CMake Support Code Documentation
@@ -46,5 +46,5 @@ These links describe the internal CMake function references. These should be con
 improvements to the CMake are needed. Build system architects should consult this section.
 
 
-[FPrime-Code](../api/cmake/FPrime-Code.md): F´ framework code inclusions  
-[FPrime](../api/cmake/FPrime.md): F´ project support
+[FPrime-Code](../../reference/api//cmake/FPrime-Code.md): F´ framework code inclusions  
+[FPrime](../../reference/api//cmake/FPrime.md): F´ project support
