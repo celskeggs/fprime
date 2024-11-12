@@ -15,20 +15,20 @@
 
 #include <IpCfg.hpp>
 #include <Drv/Ip/IpSocket.hpp>
-#include <Drv/Ip/SocketReadTask.hpp>
+#include <Drv/Ip/SocketComponentHelper.hpp>
 #include <Drv/Ip/TcpServerSocket.hpp>
 #include "Drv/TcpServer/TcpServerComponentAc.hpp"
 
 namespace Drv {
 
-class TcpServerComponentImpl : public TcpServerComponentBase, public SocketReadTask {
+class TcpServerComponentImpl : public TcpServerComponentBase, public SocketComponentHelper {
   public:
     // ----------------------------------------------------------------------
     // Construction, initialization, and destruction
     // ----------------------------------------------------------------------
 
     /**
-     * \brief construct the TcpClient component.
+     * \brief construct the TcpServer component.
      * \param compName: name of this component
      */
     TcpServerComponentImpl(const char* const compName);
@@ -55,12 +55,34 @@ class TcpServerComponentImpl : public TcpServerComponentBase, public SocketReadT
      * \param send_timeout_seconds: send timeout seconds component. Defaults to: SOCKET_TIMEOUT_SECONDS
      * \param send_timeout_microseconds: send timeout microseconds component. Must be less than 1000000. Defaults to:
      * SOCKET_TIMEOUT_MICROSECONDS
+     * \param buffer_size: size of the buffer to be allocated. Defaults to 1024.
      * \return status of the configure
      */
     SocketIpStatus configure(const char* hostname,
                              const U16 port,
                              const U32 send_timeout_seconds = SOCKET_SEND_TIMEOUT_SECONDS,
-                             const U32 send_timeout_microseconds = SOCKET_SEND_TIMEOUT_MICROSECONDS);
+                             const U32 send_timeout_microseconds = SOCKET_SEND_TIMEOUT_MICROSECONDS,
+			     FwSizeType buffer_size = 1024);
+
+    /**
+     * \brief is started
+     */
+     bool isStarted();
+
+    /**
+     * \brief startup the server socket for communications
+     *
+     * Start up the server socket by listening on a port. Note: does not accept clients, this is done in open to
+     * facilitate re-connection of clients.
+     */
+    SocketIpStatus startup();
+
+    /**
+     * \brief terminate the server socket
+     *
+     * Close the server socket. Should be done after all clients are shutdown and closed.
+     */
+    void terminate();
 
     /**
      * \brief get the port being listened on
@@ -85,7 +107,7 @@ class TcpServerComponentImpl : public TcpServerComponentBase, public SocketReadT
      *
      * \return IpSocket reference
      */
-    IpSocket& getSocketHandler();
+    IpSocket& getSocketHandler() override;
 
     /**
      * \brief returns a buffer to fill with data
@@ -95,7 +117,7 @@ class TcpServerComponentImpl : public TcpServerComponentBase, public SocketReadT
      *
      * \return Fw::Buffer to fill with data
      */
-    Fw::Buffer getBuffer();
+    Fw::Buffer getBuffer() override;
 
     /**
      * \brief sends a buffer to be filled with data
@@ -105,13 +127,17 @@ class TcpServerComponentImpl : public TcpServerComponentBase, public SocketReadT
      *
      * \return Fw::Buffer filled with data to send out
      */
-    void sendBuffer(Fw::Buffer buffer, SocketIpStatus status);
+    void sendBuffer(Fw::Buffer buffer, SocketIpStatus status) override;
 
     /**
      * \brief called when the IPv4 system has been connected
     */
-    void connected();
+    void connected() override;
 
+    /**
+     * \brief read from the socket, overridden to start and terminate the server socket
+     */
+    void readLoop() override;
 
   PRIVATE:
 
@@ -134,9 +160,11 @@ class TcpServerComponentImpl : public TcpServerComponentBase, public SocketReadT
      * \param fwBuffer: buffer containing data to be sent
      * \return SEND_OK on success, SEND_RETRY when critical data should be retried and SEND_ERROR upon error
      */
-    Drv::SendStatus send_handler(const NATIVE_INT_TYPE portNum, Fw::Buffer& fwBuffer);
+    Drv::SendStatus send_handler(const NATIVE_INT_TYPE portNum, Fw::Buffer& fwBuffer) override;
 
     Drv::TcpServerSocket m_socket; //!< Socket implementation
+
+    FwSizeType m_allocation_size; //!< Member variable to store the buffer size
 };
 
 }  // end namespace Drv
