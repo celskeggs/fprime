@@ -169,41 +169,38 @@ First, in a terminal upload the software to hardware platform. This is done with
 
 ```sh
 # For ARM 64-bit hardware
-# In: Deployment Folder
+# In: project root folder
 scp -r build-artifacts/aarch64-linux/<name-of-deployment> <username>@<device-address>:deployment
 
 # For ARM 32-bit hardware
-# In: Deployment Folder
+# In: project root folder
 scp -r build-artifacts/arm-hf-linux/<name-of-deployment> <username>@<device-address>:deployment
 ```
-!!! note
-    Users must fill in the username and device address above.
+> Users must fill in the username and device address above.
 
 Next run the F´ GDS without launching the native compilation (`-n`) and with the 
-dictionary from the build above (`--dictionary ./build-artifacts/<platform name>/<name-of-deployment>/dict/<.xml document>`).
+dictionary from the build above (`--dictionary ../build-artifacts/<platform name>/<name-of-deployment>/dict/<.json document>`).
 
 ```sh
 # For in-person workshops and ARM 64-bit hardware
-# In: Deployment Folder
-fprime-gds -n --dictionary build-artifacts/aarch64-linux/<name-of-deployment>/dict/<App Dictionary>.xml --ip-client --ip-address <device-address>
+# In: project root folder
+fprime-gds -n --dictionary build-artifacts/aarch64-linux/<name-of-deployment>/dict/<App Dictionary>.json --ip-client --ip-address <device-address>
 
 # For ARM 32-bit hardware
-# In: Deployment Folder
-fprime-gds -n --dictionary build-artifacts/aarch64-linux/<name-of-deployment>/dict/<App Dictionary>.xml --ip-client --ip-address <device-address>
+# In: project root folder
+fprime-gds -n --dictionary build-artifacts/aarch64-linux/<name-of-deployment>/dict/<App Dictionary>.json --ip-client --ip-address <device-address>
 ```
-!!! note
-    This depends on a flight software deployment that uses TcpServer as the communications driver implementation.
+> [!NOTE]
+> This depends on a flight software deployment that uses TcpServer as the communications driver implementation.
 
 In another terminal SSH into the device and run the uploaded software:
 ```sh
 ssh <username>@<device-address>
-sudo deployment/bin/<name-of-deployment> -a 0.0.0.0 -p 50000
+deployment/bin/<name-of-deployment> -a 0.0.0.0 -p 50000
 ```
-!!! note
-    User should fill in the username and device address above and ensure the correct executable is supplied.
+> User should fill in the username and device address above and ensure the correct executable is supplied.
 
-!!! note
-    If the device does not connect, ensure that the firewall port 50000 is open on the flight computer.
+> If the device does not connect, ensure that the firewall port 50000 is open on the flight computer.
 
 ### Troubleshooting
 
