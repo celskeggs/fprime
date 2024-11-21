@@ -23,8 +23,8 @@ def test_send_command(fprime_test_api):
 
 To run this test, ensure the GDS is running (by invoking `fprime-gds`) and then run `pytest test/int/test_my_deployment.py`.
 
-!!! note
-    You must ensure that your deployment has been built as this is required by `fprime-gds` and the integration test API.
+> [!NOTE]
+> TODO: rename this file. You must ensure that your deployment has been built as this is required by `fprime-gds` and the integration test API.
 
 
 ## Usage Patterns
