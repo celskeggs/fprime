@@ -21,7 +21,7 @@ This guide is for programmers who intend to maintain and develop code for the Gr
 
 ### Primary Requirements
 
--   Overall goal is to provide a command-line interface for interacting with the F' Ground Data System (GDS), which can be used entirely in place of the GDS GUI
+-   Overall goal is to provide a command-line interface for interacting with the F´ Ground Data System (GDS), which can be used entirely in place of the GDS GUI
     -   At a minimum, the CLI tools should allow for receiving all events/telemetry data from the GDS and sending commands to the spacecraft
 -   The CLI tools' output must be usable with existing UNIX utilities through piping/file output/BASH scripting/etc.
 -   The CLI tools should be multi-platform, supporting (at a minimum) Linux, Mac, and Windows systems
@@ -32,7 +32,7 @@ This guide is for programmers who intend to maintain and develop code for the Gr
 -   Feature parity should be maintained between the GDS GUI and the GDS CLI tools as far as possible
 -   Tools should be performant (finish executing in <100ms unless explicitly waiting for new data)
 -   CLI tools should work "out of the box" with minimal or no setup/configuration
--   GDS CLI options/names/operations should be consistent with the GDS GUI first, then with other F' CLI tools, then with other UNIX conventions
+-   GDS CLI options/names/operations should be consistent with the GDS GUI first, then with other F´ CLI tools, then with other UNIX conventions
 -   Should be installable through a single pip command
 -   Should support tab completion
 -   Number of 3rd-party dependencies should be kept to a minimum
@@ -75,7 +75,7 @@ External Dependencies (installed via `setup.py`):
 
 -   [argcomplete](https://github.com/kislyuk/argcomplete) - Used to implement tab completion
 
-Internal Dependencies (i.e. Other F' modules)
+Internal Dependencies (i.e. Other F´ modules)
 
 -   Integration Test API - Used to get data from and send commands to the GDS and filter incoming data via the included predicates
 -   `common/pipeline` and `common/utils` - Used to initialize the Test API; `pipeline.dictionaries` also used to get a list of available commands/events/channels

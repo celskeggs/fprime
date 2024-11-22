@@ -30,7 +30,7 @@ How-To guides offer step-by-step instructions for specific development tasks in 
 
     ---
 
-    This how to will walk you through porting F' to a new platform.
+    This how to will walk you through porting F´ to a new platform.
 
     [View Porting Guide](porting-guide.md){ .md-button .md-button--primary }
 
